@@ -18,16 +18,22 @@ def get_text_messages(message):
             response = """"""
             for name, date in records.items():
                 response = response + f"*{date}* *|* {name}\n"
-            bot.send_message(message.from_user.id, response, parse_mode= "Markdown")
+            bot.send_message(
+                message.from_user.id, response,
+                parse_mode="Markdown"
+            )
         case '/month':
             records = DataBase.get_current_month_birthday()
             response = """"""
             for name, date in records.items():
                 response = response + f"*{date}* *|* {name}\n"
-            bot.send_message(message.from_user.id, response, parse_mode= "Markdown")
+            bot.send_message(
+                message.from_user.id, response,
+                parse_mode="Markdown"
+            )
         case _:
             bot.send_message(
-                message.from_user.id, 
+                message.from_user.id,
                 f'Нет такой команды: "{message.text}" \n\t {TextMessage.HELP}'
             )
 

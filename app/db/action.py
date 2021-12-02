@@ -35,12 +35,14 @@ class DataBase:
         records = Helper.read_from_csv()
         status_img = ''
         for date, name in records:
-            date_birthday = Helper.to_format(date + '.' + str(date_today.year))
+            date_birthday = Helper.to_format(
+                date + '.' + str(date_today.year)
+            )
             date_difference = str(date_today - date_birthday)
             # если есть day в date_difference
             if 'day' in date_difference:
                 # 3 дня до ДР
-                if date_difference[:6] in ('-1 day','-2 days','-3 days'):
+                if date_difference[:6] in ('-1 day', '-2 days', '-3 days'):
                     status_img = '⚡'
                 # больше 3 дней до ДР
                 elif '-' in date_difference:
@@ -69,7 +71,7 @@ class DataBase:
                 # если есть day в date_difference
                 if 'day' in date_difference:
                     # 3 дня до ДР
-                    if date_difference[:6] in ('-1 day','-2 days','-3 days'):
+                    if date_difference[:6] in ('-1 day', '-2 days', '-3 days'):
                         status_img = '⚡'
                     # больше 3 дней до ДР
                     elif '-' in date_difference:

@@ -1,6 +1,6 @@
 from config.token import TOKEN
 from config.messages import TextMessage
-from db.action import DataBase
+from libs.action import DataBase
 
 import telebot
 

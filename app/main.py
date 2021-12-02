@@ -14,7 +14,7 @@ def get_text_messages(message):
         case '/help':
             bot.send_message(message.from_user.id, TextMessage.HELP)
         case '/all':
-            records = DataBase.get_all_birthday()
+            records = DataBase().get_all_birthday()
             response = """"""
             for name, date in records.items():
                 response = response + f"*{date}* *|* {name}\n"
@@ -23,7 +23,7 @@ def get_text_messages(message):
                 parse_mode="Markdown"
             )
         case '/month':
-            records = DataBase.get_current_month_birthday()
+            records = DataBase().get_current_month_birthday()
             response = """"""
             for name, date in records.items():
                 response = response + f"*{date}* *|* {name}\n"
@@ -38,4 +38,6 @@ def get_text_messages(message):
             )
 
 
-bot.polling(none_stop=True, interval=0)
+if __name__ == "__main__":
+
+    bot.polling(none_stop=True, interval=0)

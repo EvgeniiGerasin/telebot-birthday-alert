@@ -97,7 +97,7 @@ class DataBase:
         # если есть day в date_difference
         if 'day' in date_difference:
             # 3 дня до ДР
-            if date_difference[:6] in ('-1 day', '-2 days', '-3 days'):
+            if date_difference[:6] in ('-1 day', '-2 day', '-3 day'):
                 self._status_img = '⚡'
             # больше 3 дней до ДР
             elif '-' in date_difference:

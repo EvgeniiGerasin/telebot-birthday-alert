@@ -10,6 +10,7 @@ __pycache__/
 *.db
 *.csv
 token.py
+.vscode
 
 # Distribution / packaging
 .Python
